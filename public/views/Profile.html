@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head></head>
+<body>
+    <div class="col-lg-3">
+        <h3 class="text-capitalize">{{user.username}}'s Profile</h3>
+        <li>
+            <h4>Username: {{user.username}}</h4>
+        </li>
+        <li>
+            <h4>Email: {{user.email}}</h4>
+        </li>
+        <br />
+        <div class="input-group">
+            <input ng-model="person" type="text" class="form-control" placeholder="Follow the user ... (username)">
+            <span class="input-group-btn">
+                <button ng-click="follow()" class="btn btn-warning" type="button">Add</button>
+            </span>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <br />
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                <h3 class="text-center panel-title text-capitalize">{{user.username}}'s Bookshelf</h3>
+            </div>
+            <div class="panel-body">
+                <ul ng-repeat="book in user.books">
+                    <li>
+                        <a class="comment-text" ng-click="BookDetail(book)" class="btn btn-link" href="#/book">{{book.title}}</a>
+                        <button class="btn btn-danger pull-right" ng-click="RemoveBook($index)">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                        <hr />
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <br />
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h3 class="text-center panel-title text-capitalize">{{user.username}}'s Following</h3>
+            </div>
+            <div class="panel-body">
+                <li ng-repeat="following in user.followings track by $index">
+                    <a class="btn btn-link"  ng-click="checkFollow(following)">{{following}}</a>
+                    <button class="btn btn-danger pull-right" ng-click="RemoveFollowing($index)">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    <hr />
+                </li>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <br />
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h3 class="text-center panel-title text-capitalize">{{user.username}}'s Follower</h3>
+            </div>
+            <div class="panel-body">
+                <li ng-repeat="follower in user.followers track by $index">
+                    <a class="btn btn-link" ng-click="checkFollow(follower)">{{follower}}</a>
+                    <button class="btn btn-danger pull-right" ng-click="RemoveFollower($index)">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    <hr />
+                </li>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <hr />
+    <hr />
+    <div class="container">
+        <form class="form-signin">
+            <label for="inputUserName" class="sr-only">User Name</label>
+            <input ng-model="user.username" type="username id="username" class="form-control" placeholder="UserName" required autofocus>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input ng-model="user.password" type="password" id="password" class="form-control" placeholder="Password" required>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="remember-me" id="remember" checked="true" >
+                    Remember me
+                </label>
+            </div>
+            <button ng-click="login(user)" id="signin" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        </form>
+    </div>
+    <!-- /container -->
+
+</body>
+</html>
+

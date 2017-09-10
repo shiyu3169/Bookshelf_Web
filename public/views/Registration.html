@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Register</title>
+</head>
+<body>
+    <hr />
+    <hr />
+    <div class="container">
+        <form class="form-signin">
+            <h2 class="form-signin-heading">Please Register</h2>
+            <label for="inputEmail" class="sr-only">Email</label>
+            <input ng-model="user.email" type="email" id="email" class="form-control" placeholder="Email@example.com" required>
+            <label for="inputUserName" class="sr-only">User Name</label>
+            <input ng-model="user.username" type="username id="Username" class="form-control" placeholder="UserName" required autofocus>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input ng-model="user.password" type="password" id="Password" class="form-control" placeholder="Password" required>
+            <button ng-click="register(user)" class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+        </form>
+
+    </div>
+    <!-- /container -->
+
+</body>
+</html>

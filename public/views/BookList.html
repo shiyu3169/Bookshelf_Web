@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+</head>
+<body>
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img class="first-slide" src="../Harry-Harry-Potter-And-The-Deathly-Hallows-harry-potter-16692602-1280-1024.jpg" alt="First slide"/>
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Fantasy, Mystery, Fiction</h1>
+                        <p><a class="btn btn-primary" href="#" role="button">Learn More</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img class="second-slide" src="../commonsense-guide-to-cooking.jpg" alt="Second slide"/>
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Cookbooks, Food & Wine</h1>
+                        <p><a class="btn btn-primary" href="#" role="button">Learn More</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img class="third-slide" src="../Screen-Shot-2013-07-22-at-11.23.15-AM.png" alt="Third slide"/>
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Travel, Adventurers, Explorers </h1>
+                        <p><a class="btn btn-primary" href="#" role="button">Learn More</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <!-- Search -->
+    <div class="container">
+        <hr />
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <div class="input-group">
+                <input ng-model="search" type="text" class="form-control" placeholder="Seaching for ... ( Title / Author / Publisher / Subject / ISBN / LCCN / OCLC )">
+                <span class="input-group-btn">
+                    <button ng-click="searchBook()" class="btn btn-default" type="button">Go!</button>
+                </span>
+            </div>
+        </div>
+        <hr />
+        <hr />
+        <div ng-show="books.length > 0">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="text-center">Title</th>
+                        <th class="text-center">Authors</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="book in books">
+                        <td>
+                            <button class="btn btn-danger" ng-click="AddtoBookshelf(book)">
+                                <span class="glyphicon glyphicon-heart"></span>
+                            </button>
+                        </td>
+                        <td class="text-center" ng-click="BookDetail(book)">
+                            <a class="btn btn-link" href="#/book">{{book.volumeInfo.title}}</a>
+                        </td>
+                        <td>
+                            <li class="text-center" ng-repeat="author in book.volumeInfo.authors">{{author}}
+                            </li>
+                        </td>
+                        <td class="pull-right">
+                            <img alt="bookPic" src="{{book.volumeInfo.imageLinks.thumbnail}}" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

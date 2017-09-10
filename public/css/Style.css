@@ -1,0 +1,23 @@
+﻿/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+}
+
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.left-padding {
+    padding-left: 5em;
+}
+
+.left-padding-small {
+    padding-left: 2em;
+}
+
+.comment-text {
+    word-wrap: break-word;
+}
